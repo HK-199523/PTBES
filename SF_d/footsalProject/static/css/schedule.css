@@ -1,0 +1,205 @@
+/*共通部分*/
+.fc-col-header-cell-cushion,.fc-daygrid-day-number,.fc-list-day-text,.fc-list-day-text,.fc-list-day-side-text{
+    color: #000;
+}
+
+a{
+    color: #000;
+}
+
+#topIcon{
+    height: 20px;
+}
+
+#linkRoute{
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#linkRoute a{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#linkRoute span{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 10px 0 10px;
+}
+
+/*下記はカレンダー共通css*/
+.fc-day-sun{
+    background-color:#f08080;
+}
+.fc-day-sat{
+    background-color: #87ceeb;
+}
+.fc-day-today{
+    background-color:#eee8aa;
+}
+
+/*以下は予定クリック時のモーダル表示用css*/
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family:'Avenir','Helvetica, Neue','Helvetica','Arial';
+}
+
+
+/* モーダルCSS */
+.modalArea {
+    display: none;
+    position: fixed;
+    z-index: 10000; /*サイトによってここの数値は調整 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modalBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+}
+
+.modalContents{
+    margin-top: 30px;
+    padding: 15px;
+}
+
+#modalTerm{
+    -webkit-transform: skew(-15deg);
+    transform: skew(-15deg);
+    color: #fff;
+    background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+    background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+}
+
+.modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 80%;
+    height: 90%;
+    max-width: 800px;
+    padding: 10px 30px;
+    background-color: #fff;
+    overflow:auto;
+}
+
+.closeModal {
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+#closeBtn{
+    width:25px;
+}
+
+
+/* 以下ボタンスタイル */
+button {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #282828;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.buringDiv{
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+#modalCategory{
+    margin-bottom: 50px;
+}
+
+.LeftLine{
+    border-bottom: 6px double #209cff;
+    display: inline;
+}
+
+#openModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+/*ここまでがモーダル用の設定*/
+
+/*1400px以上*/
+@media only screen and (min-width: 1400px){
+
+}
+
+/*1200px以上*/
+@media only screen and (min-width: 1200px){
+	
+}
+
+/*800px以上900px以下の時の対応*/
+@media only screen and (min-width:800px) and (max-width:900px){
+	
+}
+
+/*800PX以上*/
+@media only screen and (min-width: 800px){
+    .container{
+        margin-top: 100px;
+    }
+
+
+    #modalTerm{
+        width: 50%;
+        padding: 1rem 3rem;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .modalContents{
+        font-size: 17px;
+    }
+}
+
+/*1000px以上*/
+@media only screen and (min-width:1000px){
+	
+}
+
+/*800px未満はここから*/
+@media only screen and (max-width: 799px){
+    #linkRoute{
+        margin-top: 40px;
+        margin-bottom: 60px;
+        display: block;
+    }
+
+    .container{
+        padding-top: 50px;
+    }
+    #calendar{
+        font-size: 10px;
+    }
+    .fc-col-header-cell-cushion,.fc-daygrid-day-number{
+        color: #000;
+    }
+
+    #modalTerm{
+        width: 80%;
+        padding: 0.4rem 2rem;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .modalContents{
+        margin-top: 30px;
+        padding: 0px;
+    }
+}

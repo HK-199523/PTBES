@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>簡易掲示板</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/photoUpload.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--<script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>-->
+
+</head>
+
+<body>
+
+    <main class="container">
+        <div>
+            <h3>
+                Photo Upload Page
+            </h3>
+        </div>
+        {% if messages %}
+            <ul class="messages_ul">
+                {% for message in messages %}
+                    <li class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %}" role="alert">{{ message.msg }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="" method="POST" name="uploadPhoto" id="uploadPhoto" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{one_for_one.non_field_errors }}
+            {{multi_for_one.non_field_errors }}
+            {{one_for_one.as_p}}
+            {{multi_for_one.image1}}
+            <button type="submit" class="btn btn-primary" name="save_photo"> 変更 </button>
+        </form>
+    </main>
+</body>
+</html>

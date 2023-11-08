@@ -1,0 +1,7 @@
+.messages_ul li{
+    list-style:none;
+}
+
+.messages_ul{
+    padding-left: 0;
+}

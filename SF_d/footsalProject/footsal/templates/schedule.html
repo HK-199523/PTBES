@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SUNDAY FC SCHEDULE{% endblock %}
+
+{% block static_css %}
+    <link rel="stylesheet" href="{% static 'css/calendar/main.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+{% endblock %}
+{% block static_js %}
+    {{ event_data|json_script:"event-data" }}
+    <script>
+        var f_con_list = [];
+        var contents_list={{event_data|safe}};
+        for(let i =0;i<contents_list.length;i++){
+            var final_con = contents_list[i].content.replace(/\r\n/g,"<br>");
+            f_con_list[i]=final_con;
+        }
+    </script>
+    <script src="{% static 'js/calendar/main.min.js' %}"></script>
+    <script src="{% static 'js/schedule.js' %}"></script>
+{% endblock %}
+
+
+{% block contents %}
+    <div class="container">
+        <div id="linkRoute">
+            <a href="{% url 'footsal:index' %}">
+                <img id="topIcon" src="{% static 'img/homeIcon.png' %}" alt="topIcon"/>TOP
+            </a>
+            <span>&gt;&gt;&gt;</span>
+            <a href="{% url 'footsal:schedule' %}">
+                SCHEDULE
+            </a>
+        </div>
+        <div id='calendar' class="calendar"></div>
+    </div>
+    
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <h1 id="modalTerm"></h1>
+                <div class="buringDiv">
+                    <p class="LeftLine">開始時間：<span id="startTimezone"></span></p><br>
+                    <p class="LeftLine">終了時間：<span id="endTimezone"></span></p>
+                </div class="buringDiv">
+                <div class="buringDiv">
+                    <p id="modalCategory" class="LeftLine">プレイカテゴリ：<span id="detilCategry"></span></p><br>
+                </div>
+                <div>
+                    <p class="buringDiv LeftLine">詳細情報</p>
+                    <p id="modalBody"></p>
+                </div>
+            </div>
+            <div id="closeModal" class="closeModal">
+                <img id="closeBtn" src="{% static 'img/closeBtn.png' %}" alt="closeBtn"/>
+            </div>
+        </div>
+    </section>
+    {% for i in Event %}
+        {{i.id}}
+    {% endfor %}
+
+    
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load date_filter %}
+{% load static %}
+
+{% block title %}SUNDAY FC TOP PAGE{% endblock %}
+
+{% block static_css %}
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+{% endblock %}
+
+{% block static_middle_js %}
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/slick_self.js' %}"></script>
+{% endblock %}
+
+{% block contents %}
+    <div id="mainDiv" class="">
+        <div id="slideshow" class="slider">
+            <div><img src="{% static 'img/slideshow/slide0.jpg' %}" alt="slide0"/></div>
+            <div><img src="{% static 'img/slideshow/slide1.jpg' %}" alt="slide1"/></div>
+            <div><img src="{% static 'img/slideshow/slide2.jpg' %}" alt="slide2"/></div>
+            <div><img src="{% static 'img/slideshow/slide3.jpg' %}" alt="slide3"/></div>
+            <div><img src="{% static 'img/slideshow/slide4.jpg' %}" alt="slide4"/></div>
+        </div>
+        <div id="clubeTerm">
+            <img id="topTerm" src="{% static 'img/topTerm.png' %}" alt="topTerm"/>
+            <div id="topArticle">
+                <p>
+                    SUNDAY FC FOOTSALのホームページをご覧いただきありがとうございます★<br><br>
+                    主催者のADACHIです。アラフォー男子です！<br>
+                    このチームはｘｘｘｘ年から小学生の育成を目的として活動をし始めて<br>
+                    現在では小学生だけでなく大人の部であるLGENDでも活動しているチームになります。<br><br>
+                    目標としては老若男女が時には楽しく、<br>
+                    時には激しくフットサルをできるようなチームを目指しています。<br>
+                    興味があるようでしたら是非お声かけてください！！<br>
+                </p>
+            </div>
+        </div>
+        <div id="newsAll">
+            <h1>NEWS</h1>
+            <div id="newsBody" class="row">
+                {% for new in news %}
+                    <div class="card rowChild" style="border:none;">
+                        <a href="{% url 'footsal:detail' new.pk %}" class="Image"><img src="{{ new.image1.url }}"  alt="No Image"></a>
+                        <div class="card-body">
+                            <p>
+                                投稿日時：{{ new.posted_at | date:'Y/m/d'}}
+                                {% if new.posted_at|is_new %}
+                                    <span class="newJudge">
+                                        NEW
+                                    </span>
+                                {% endif %}
+                            </p>
+                            <div class="">{{ new.title }}</div>
+                            <a href="{% url 'footsal:detail' new.pk %}"><p class="card-text text_limit">{{new.content}}</p></a>
+                            <button class="card-link btn btn-dark" onclick="limit2Cate('{{new.category}}')">{{new.category}}</button>
+                            <button class="card-link btn btn-dark" onclick="limit2Place('{{ new.place }}')">{{ new.place }}</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="pastPost">
+                <a href="{% url 'footsal:postAll' %}">過去のお知らせ一覧</a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function limit2Cate(cate){
+                if(cate == "SCHOOL"){
+                    window.location.href = "{% url 'footsal:school' %}";
+                }else{
+                    window.location.href = "{% url 'footsal:legend' %}";
+                }
+            }
+            
+            function limit2Place(place){
+                if(place == "船橋市運動公園体育館"){
+                    window.location.href = "{% url 'footsal:funa' %}";
+                }else if(place == "国府台体育館"){
+                    window.location.href = "{% url 'footsal:kono' %}";
+                }else if(place == "東部スポーツ体育館"){
+                    window.location.href = "{% url 'footsal:tobu' %}";
+                }else if(place == "市川市塩浜体育館"){
+                    window.location.href = "{% url 'footsal:ichi' %}";
+                }else{
+                    window.location.href = "{% url 'footsal:kashiwa' %}";
+                }
+            }
+        </script>
+        <div id="snsAll" class="">
+            <h1>SNS</h1>
+            <div id="snsBody">
+                <div class="snsA">
+                    <h3>
+                        facebook
+                    </h3>
+                    <div class="fb-page" data-href="https://www.facebook.com/%E3%82%B5%E3%83%B3%E3%83%87%E3%83%BCfc%E5%B8%82%E5%B7%9D%E5%B8%82%E8%88%B9%E6%A9%8B%E5%B8%82%E3%81%A7%E3%83%95%E3%83%83%E3%83%88%E3%82%B5%E3%83%AB-106282718225636/" data-tabs="timeline" data-width="500" data-height="700" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/%E3%82%B5%E3%83%B3%E3%83%87%E3%83%BCfc%E5%B8%82%E5%B7%9D%E5%B8%82%E8%88%B9%E6%A9%8B%E5%B8%82%E3%81%A7%E3%83%95%E3%83%83%E3%83%88%E3%82%B5%E3%83%AB-106282718225636/" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/%E3%82%B5%E3%83%B3%E3%83%87%E3%83%BCfc%E5%B8%82%E5%B7%9D%E5%B8%82%E8%88%B9%E6%A9%8B%E5%B8%82%E3%81%A7%E3%83%95%E3%83%83%E3%83%88%E3%82%B5%E3%83%AB-106282718225636/">
+                                サンデーfc市川市船橋市でフットサル
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="snsA">
+                    <h3>
+                        Twitter
+                    </h3>
+                    <div class="twitter">
+                        <a class="twitter-timeline" data-width="500" data-height="700" data-theme="light" href="https://twitter.com/sundayfc2021">
+                            Tweets by SUNDAY FC
+                        </a>
+                        <script async src="https://platform.twitter.com/widgets.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accessAll">
+            <h1>ACCESS</h1>
+            <div>
+                <p>
+                    下記が現在の活動場所です。活動場所の位置の確認に関しては下記のボタンを押して確認をお願い致します。
+                </p>
+            </div>
+            <div id="accessBody">
+                <form>
+                    <p id="changeMap">
+                        <input class="btn nowBtn" type="button" id="kashiwai" value="市川市立柏井小学校　体育館" />
+                        <input class="btn btn-dark" type="button" id="funabashi" value="船橋市運動公園　体育館"  />
+                        <input class="btn btn-dark" type="button" id="konodai" value="国府台体育館"  />
+                        <input class="btn btn-dark" type="button" id="tobu" value="東部スポーツパーク体育館" />
+                        <input class="btn btn-dark" type="button" id="ichikawa" value="市川小学校　体育館" />
+                    </p>
+                </form>
+                <div>
+                    <p style="font-weight: 600; margin: 30px 0; border-bottom: double #000 ;  border-top: double #000 ; padding: 10px 0;">
+                        〒272-0802<br>
+                        千葉県市川市柏井町１丁目１１４９−１
+                    </p>
+                </div>
+                <iframe id="googlemapAll" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.2000549541185!2d139.96610031704492!3d35.739489029246855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188110160e0d3b%3A0x4143fc6837d6cfdb!2z5biC5bed5biC56uL5p-P5LqV5bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1656601474064!5m2!1sja!2sjp" 
+                        width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}

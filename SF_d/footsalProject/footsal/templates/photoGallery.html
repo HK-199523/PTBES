@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load date_filter %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block static_css %}
+    <link rel="stylesheet" href="{% static 'css/postAll.css' %}">
+{% endblock %}
+
+{% block static_js %}
+    <script src="{% static 'js/postAll.js' %}"></script>
+{% endblock %}
+
+{% block contents %}
+    <div id="mainDiv" class="">
+        <div>
+            <div id="linkRoute">
+                <a href="{% url 'footsal:index' %}">
+                    <img id="topIcon" src="{% static 'img/homeIcon.png' %}" alt="topIcon"/>TOP
+                </a>
+                <span>&gt;&gt;&gt;</span>
+                <a href="{% url 'footsal:photoGallery' %}">
+                    PHOTO GALLERY
+                </a>
+
+            </div>
+            <div class="newsInfo">
+                <p>
+                    個サルやスクールごとの写真を掲載しています。<br>
+                    イベントごとの他写真に関しては画像をクリックしてください。
+                </p>
+            </div>
+            <div id="newsBody" class="row">
+                {% for photoResult,photoOnlyFirst in photoall %}
+                    <div id="{{photoResult.id}}_image" class="card rowChild" style="border:none;">
+                        <a href="{% url 'footsal:detail_photo' photoResult.pk %}" class="Image"><img src="{{ photoOnlyFirst.image1.url }}"  alt="No Image"></a>
+                        <div class="card-body">
+                            <p>
+                                投稿日時：{{ photoResult.posted_at | date:'Y/m/d'}}
+                                {% if photoResult.posted_at|is_new %}
+                                    <span class="newJudge">
+                                        NEW
+                                    </span>
+                                {% endif %}
+                            </p>
+                            <div class="">{{ photoResult.title }}</div>
+                            <a href="#"><p class="card-text text_limit">ダミー３</p></a>
+                            <button id="{{photoResult.id}}_place"class="card-link btn btn-dark" >ダミー１</button>
+                            <button class="card-link btn btn-dark" >ダミー２</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include "pagination.html" %}
+    </div>
+{% endblock %}
