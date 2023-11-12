@@ -1,46 +1,165 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Resetting some default styles */
+body, ul {
     margin: 0;
     padding: 0;
 }
 
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
 }
 
 nav ul li {
     display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 120px; /* Adjust to your logo size */
 }
 
 main {
-    padding: 20px;
+    padding-top: 100px; /* Adjust to accommodate the fixed header */
 }
 
 section {
-    margin-bottom: 30px;
+    padding: 50px;
+}
+
+#hero {
+    /* Style your hero section here */
+}
+
+#exchange {
+    /* Style your currency exchange form here */
+}
+
+#destinations {
+    /* Style your travel destinations section here */
+}
+
+#about {
+    /* Style your 'About Us' section here */
 }
 
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
 }
+/* Add these styles to your existing style.css file or create a new CSS file */
+/* Header section */
+#Header {
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+/* Header inner container */
+.Header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+#Header__logo img {
+    width: 114px;
+    height: 48px;
+}
+
+/* Select area */
+#SelectArea {
+    /* Add styles for the select area */
+}
+
+/* Header links */
+.Header__links {
+    display: flex;
+    align-items: center;
+}
+
+.Header__links-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Header__links-items li {
+    display: inline;
+    margin-right: 15px;
+}
+
+/* Favorite and My page links */
+.Header__favorite,
+.Header__mypage {
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    border-radius: 5px;
+    color: #333;
+}
+/* Add these styles to your CSS file */
+#Gnav {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+.Gnav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Gnav__group {
+    margin: 0 20px;
+}
+
+.Gnav__label {
+    font-weight: bold;
+}
+
+.Gnav__items {
+    list-style: none;
+    padding: 0;
+}
+
+.Gnav__item {
+    margin: 10px 0;
+}
+
+.Gnav__link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+/* Add more styles or adjust as needed */

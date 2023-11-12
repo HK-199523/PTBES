@@ -6,38 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange & Travel</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-
+    <!-- Include any necessary JavaScript files -->
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo">
+                <img src="{% static 'logo.gif' %}" alt="Logo">
+            </div>
             <ul>
-                <li><a href="#exchange">Currency Exchange</a></li>
-                <li><a href="#destinations">Travel Destinations</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#exchange">為替レート</a></li>
+                <li><a href="#destinations">旅行の目的地</a></li>
+                <li><a href="#about">当社について</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="hero">
+            <!-- Your hero section with a large image or video -->
+        </section>
+
         <section id="exchange">
-            <h1>Currency Exchange</h1>
             <!-- Your currency exchange form goes here -->
         </section>
 
         <section id="destinations">
-            <h1>Travel Destinations</h1>
             <!-- Cards or list for travel destinations -->
         </section>
 
         <section id="about">
-            <h1>About Us</h1>
             <!-- Information about your website goes here -->
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Currency Exchange & Travel</p>
+        <p>&copy; 2023 為替レート | 旅行 </p>
     </footer>
 </body>
 </html>
