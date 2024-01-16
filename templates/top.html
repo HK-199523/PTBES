@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+{% block content %}
+{% load static %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'top_style.css' %}">
+<img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい">
+
+<div style="width: 100%; height: auto;">
+    <div class="p1">
+        <p style="font-size: 38px;">お住まいの国の通貨と外国通貨を比較する</p>
+    </div>
+    <div class="p2">
+        <p style="font-size: 24px;">お住まいの国の通貨を為替レート上で比較し、</p>
+        <p style="font-size: 24px;">通貨の安い国の観光地をピックアップするサービスを提供します。</p>
+    </div>
+    <div style="width: 100%; height: 350px;" class="relative">
+        <p class="left-64 absolute  text-3xl inline-block mb-7">JPY(円)</p>
+        <div class="left-52 absolute mt-7 bottom-24" >
+            <img src="{% static 'images/japan.jpg' %}" class="">
+            <img src="{% static 'images/japan_flag.jpg' %}" class="top-0 absolute">
+        </div>
+        <p class="right-56 absolute  text-3xl inline-block mb-7" >VND(ドン)</p>
+        <div class="right-52 absolute mt-7 bottom-24">
+            <img src="{% static 'images/vietnam.jpg' %}">
+            <img src="{% static 'images/vietnam_flag.jpg' %}" class="top-0 absolute">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

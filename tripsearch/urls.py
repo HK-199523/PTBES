@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('exchange/', views.exchange, name='exchange'),
+    path('top/', views.top, name='top'),
     # Define other URL patterns...
 
 
