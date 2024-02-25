@@ -1,6 +1,11 @@
 # alpine OSのPython3.12のimage取得
 FROM python:3.12-alpine
 
+# sqlite3のインストール
+RUN apk update && \
+    apk add --no-cache sqlite && \
+    rm -rf /var/cache/apk/*
+
 # 実行ディレクトリ
 WORKDIR /usr/src/app
 
@@ -12,6 +17,7 @@ RUN /usr/local/bin/python -m pip install --upgrade pip
 
 # requirements.txtに書かれているpythonのライブラリをpipを使ってインストール
 RUN pip install -r requirements.txt
+
 
 
 # 以下Docker コマンド
