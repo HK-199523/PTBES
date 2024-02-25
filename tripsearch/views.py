@@ -6,4 +6,7 @@ def home(request):
 def exchange(request):
     return render(request, 'exchange.html')
 
+def top(request):
+    return render(request, 'top.html')
+
 # Define other views similarly...

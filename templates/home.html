@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange & Travel</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Include any necessary JavaScript files -->
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="{% static 'logo.gif' %}" alt="Logo">
+                <img src="{% static 'images/logo.gif' %}" alt="Logo">
             </div>
             <ul>
                 <li><a href="#exchange">為替レート</a></li>
@@ -21,26 +22,29 @@
             </ul>
         </nav>
     </header>
-
-    <main>
+    
+    {% block content %}
+    
+    {% endblock %}
+    <!-- <main> 
         <section id="hero">
-            <!-- Your hero section with a large image or video -->
+            Your hero section with a large image or video 
         </section>
 
         <section id="exchange">
-            <!-- Your currency exchange form goes here -->
+            Your currency exchange form goes here 
         </section>
 
         <section id="destinations">
-            <!-- Cards or list for travel destinations -->
+             Cards or list for travel destinations 
         </section>
 
         <section id="about">
-            <!-- Information about your website goes here -->
+             Information about your website goes here 
         </section>
-    </main>
-
-    <footer>
+    </main>  -->
+    
+    <footer class="mt-7">
         <p>&copy; 2023 為替レート | 旅行 </p>
     </footer>
 </body>

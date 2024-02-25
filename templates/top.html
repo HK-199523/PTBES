@@ -1,0 +1,64 @@
+{% extends 'home.html' %}
+
+{% block content %}
+{% load static %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'top_style.css' %}">
+<img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい">
+
+<div style="width: 100%; height: auto;">
+    <div class="p1">
+        <p style="font-size: 38px;">お住まいの国の通貨と外国通貨を比較する</p>
+    </div>
+    <div class="p2">
+        <p style="font-size: 24px;">お住まいの国の通貨を為替レート上で比較し、</p>
+        <p style="font-size: 24px;">通貨の安い国の観光地をピックアップするサービスを提供します。</p>
+    </div>
+    <div style="width: 100%; height: 350px;" class="relative">
+        <p class="left-64 absolute  text-3xl inline-block mb-7">JPY(円)</p>
+        <div class="left-52 absolute mt-7 bottom-24" >
+            <img src="{% static 'images/japan.jpg' %}">
+            <img src="{% static 'images/japan_flag.jpg' %}" class="top-0 absolute">
+        </div>
+        <p class="right-56 absolute  text-3xl inline-block mb-7" >VND(ドン)</p>
+        <div class="right-52 absolute mt-7 bottom-24">
+            <img src="{% static 'images/vietnam.jpg' %}">
+            <img src="{% static 'images/vietnam_flag.jpg' %}" class="top-0 absolute">
+        </div>
+        <img src="{% static 'images/plain.png' %}" class="absolute bottom-40" style="left:450px;">
+        <canvas id="direction_mark" class="w-52 h-36 absolute" style="left: 700px; bottom: 200px;"></canvas>
+        <div style="width: 326px; height:86px; left:516px; bottom:0; 
+            background-color:#98D1EF; border-radius:50px;"class="absolute">
+            <p class="text-3xl text-center" style="line-height: 88px;">為替レート</p>
+        </div>
+    </div>
+</div>
+<div style="width: 100%; height: auto;"class="text-center">
+    <p style="font-size: 38px; margin-top: 100px;" class="">あんな観光地、こんな観光地</p>
+    <div style="margin: 50px;">
+        <p class="text-2xl">国を選択したら観光地を紹介します。</p>
+        <p class="text-2xl">おどろきの観光地が見つかるかもしれません</p>
+    </div>
+    <div class="flex relative">
+        <img src="{% static 'images/destination1.jpg' %}" class="m-6" >
+        <img src="{% static 'images/destination2.jpg' %}" class="m-6" >
+        <img src="{% static 'images/destination3.jpg' %}" class="m-6" >
+    </div>
+    <p style="font-size: 38px; margin-top: 100px;" class="">旅行先を目的に沿って選ぶことも</p>
+    <div style="margin: 50px;">
+        <p class="text-2xl">食べ物、歴史、自然などの選択ができます。</p>
+    </div>
+    <div class="flex relative">
+        <img src="{% static 'images/food.jpg' %}" class="m-6">
+        <p style="font-size: 40px; color:white;" class="absolute top-40 left-40" >食べ物</p>
+
+        <img src="{% static 'images/history.jpg' %}" class="m-6">
+        <p style="font-size: 40px; color:white; top:160px; left:640px;" class="absolute">歴史</p>
+
+        <img src="{% static 'images/nature.jpg' %}" class="m-6">
+        <p style="font-size: 40px; color:white;" class="absolute top-40 right-48">自然</p>
+    </div>
+</div>
+<script src="{% static '../static/script.js' %}"></script>
+
+{% endblock %}
