@@ -1,1 +1,3 @@
 __pypackages__/
+migrations
+*.sqlite3
