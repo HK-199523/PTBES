@@ -8,6 +8,98 @@
 from django.db import models
 
 
+class Country(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    countrycode = models.CharField(db_column='CountryCode', blank=True, null=True)  # Field name made lowercase.
+    countryname = models.CharField(db_column='CountryName', blank=True, null=True)  # Field name made lowercase.
+    regioncode = models.CharField(db_column='RegionCode', blank=True, null=True)  # Field name made lowercase.
+    averageincome = models.DecimalField(db_column='AverageIncome', max_digits=10, decimal_places=5, blank=True, null=True)  # Field name made lowercase. max_digits and decimal_places have been guessed, as this database handles decimal fields as float
+
+    class Meta:
+        managed = False
+        db_table = 'Country'
+
+
+class Exchangerate(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    countrycode = models.CharField(db_column='CountryCode', blank=True, null=True)  # Field name made lowercase.
+    unitcode = models.CharField(db_column='UnitCode', blank=True, null=True)  # Field name made lowercase.
+    exchangerate = models.DecimalField(db_column='ExchangeRate', max_digits=10, decimal_places=5, blank=True, null=True)  # Field name made lowercase. max_digits and decimal_places have been guessed, as this database handles decimal fields as float
+
+    class Meta:
+        managed = False
+        db_table = 'ExchangeRate'
+
+
+class News(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    newsid = models.IntegerField(db_column='NewsID', blank=True, null=True)  # Field name made lowercase.
+    title = models.CharField(db_column='Title', blank=True, null=True)  # Field name made lowercase.
+    content = models.TextField(db_column='Content', blank=True, null=True)  # Field name made lowercase.
+    userid = models.IntegerField(db_column='UserID', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'News'
+
+
+class Region(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    regioncode = models.CharField(db_column='RegionCode', blank=True, null=True)  # Field name made lowercase.
+    regionname = models.CharField(db_column='RegionName', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Region'
+
+
+class Touristspot(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    countrycode = models.CharField(db_column='CountryCode', blank=True, null=True)  # Field name made lowercase.
+    touristspotname = models.CharField(db_column='TouristSpotName', blank=True, null=True)  # Field name made lowercase.
+    touristspotcode = models.CharField(db_column='TouristSpotCode', blank=True, null=True)  # Field name made lowercase.
+    touristspotdescription = models.TextField(db_column='TouristSpotDescription', blank=True, null=True)  # Field name made lowercase.
+    imageurl = models.CharField(db_column='ImageURL', blank=True, null=True)  # Field name made lowercase.
+    url1 = models.CharField(db_column='URL1', blank=True, null=True)  # Field name made lowercase.
+    url2 = models.CharField(db_column='URL2', blank=True, null=True)  # Field name made lowercase.
+    url3 = models.CharField(db_column='URL3', blank=True, null=True)  # Field name made lowercase.
+    url4 = models.CharField(db_column='URL4', blank=True, null=True)  # Field name made lowercase.
+    url5 = models.CharField(db_column='URL5', blank=True, null=True)  # Field name made lowercase.
+    displayflag = models.BooleanField(db_column='DisplayFlag', blank=True, null=True)  # Field name made lowercase.
+    userid = models.IntegerField(db_column='UserID', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'TouristSpot'
+
+
+class Unit(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    unitcode = models.CharField(db_column='UnitCode', blank=True, null=True)  # Field name made lowercase.
+    unitname = models.CharField(db_column='UnitName', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Unit'
+
+
+class User(models.Model):
+    creationdate = models.DateTimeField(db_column='CreationDate', blank=True, null=True)  # Field name made lowercase.
+    updatedate = models.DateTimeField(db_column='UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    userid = models.IntegerField(db_column='UserID', blank=True, null=True)  # Field name made lowercase.
+    username = models.CharField(db_column='UserName', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'User'
+
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
