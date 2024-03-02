@@ -4,7 +4,31 @@
 {% load static %}
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'top_style.css' %}">
-<img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい">
+
+<div class="w-screen flex flex-col justify-center items-center">
+
+    <div class="flex flex-row">
+        <div class="py-[300px]"><h1 class="text-4xl">安く、遠くに行きたい</h1></div>
+        <div><img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい"></div>
+    </div>
+
+    <div class="py-10">
+        <h2 class="md:text-2xl 2xl:text-4xl">お住まいの国の通貨と外国通貨を比較する</h2>
+        <div class="py-8 w-2/3 text-center">
+            <p class="text-3xl">お住まいの国の通貨を為替レート上で比較し、通貨の安い国の観光地をピックアップするサービスを提供します。</p>
+        </div>
+    </div>
+
+</div>
+
+
+<ul>
+    {% for newsinfo in newsinfoList %}
+    <li>{{ newsinfo.title }}</li>
+    {% endfor %}
+</ul>
+
+    
 
 <div style="width: 100%; height: auto;">
     <div class="p1">
@@ -33,6 +57,8 @@
         </div>
     </div>
 </div>
+
+
 <div style="width: 100%; height: auto;"class="text-center">
     <p style="font-size: 38px; margin-top: 100px;" class="">あんな観光地、こんな観光地</p>
     <div style="margin: 50px;">

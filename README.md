@@ -1,6 +1,12 @@
 
 # データベース
 
+ログイン
+sqlite3 db.sqlite3
+
+登録
+INSERT INTO NEWS (creationdate, updatedate, title, content, userid) VALUES (datetime('now', 'localtime'), datetime('now', 'localtime'), 'titel', 'a', 1);
+
 ## ユーザ
 
 - テーブル名　　　　　: ユーザ
