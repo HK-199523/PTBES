@@ -3,88 +3,199 @@
 {% block content %}
 {% load static %}
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'top_style.css' %}">
+<script src="{% static '../static/jquery-3.7.1.min.js' %}"></script>
 
 <div class="w-screen flex flex-col justify-center items-center">
 
-    <div class="flex flex-row">
-        <div class="py-[300px]"><h1 class="text-4xl">安く、遠くに行きたい</h1></div>
-        <div><img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい"></div>
-    </div>
+    <div class="relative w-full flex justify-center items-center bg-[#97d0ee]" >
 
-    <div class="py-10">
-        <h2 class="md:text-2xl 2xl:text-4xl">お住まいの国の通貨と外国通貨を比較する</h2>
-        <div class="py-8 w-2/3 text-center">
-            <p class="text-3xl">お住まいの国の通貨を為替レート上で比較し、通貨の安い国の観光地をピックアップするサービスを提供します。</p>
+        <div class="flex flex-col mt-40">
+
+            <div class="container mx-auto  relative" id="small_first">
+
+                <h1 class="text-white text-xl invisible relative left-0 top-0 ml-10">安く、遠くに行きたい</h1>
+                <h2 class="text-white text-lg invisible relative left-0 top-[20px] ml-10">外国為替と比較し、<br>安いところに旅行に行こう</h2>
+
+                <img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい">
+                <div class="flex flex-col" id="firstViewSentense">
+                    <div class=" w-auto text-left absolute top-28 ml-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:transform-none mb-7">
+                        <h1 class="text-white text-4xl">安く、遠くに行きたい</h1>
+                    </div>
+                    <div class="w-auto text-left absolute top-64 ml-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:transform-none">
+                        <h2 class="text-white text-3xl">外国為替と比較し、安いところに旅行に行こう</h2>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
-
-</div>
-
-
-<ul>
-    {% for newsinfo in newsinfoList %}
-    <li>{{ newsinfo.title }}</li>
-    {% endfor %}
-</ul>
 
     
 
-<div style="width: 100%; height: auto;">
-    <div class="p1">
-        <p style="font-size: 38px;">お住まいの国の通貨と外国通貨を比較する</p>
-    </div>
-    <div class="p2">
-        <p style="font-size: 24px;">お住まいの国の通貨を為替レート上で比較し、</p>
-        <p style="font-size: 24px;">通貨の安い国の観光地をピックアップするサービスを提供します。</p>
-    </div>
-    <div style="width: 100%; height: 350px;" class="relative">
-        <p class="left-64 absolute  text-3xl inline-block mb-7">JPY(円)</p>
-        <div class="left-52 absolute mt-7 bottom-24" >
-            <img src="{% static 'images/japan.jpg' %}">
-            <img src="{% static 'images/japan_flag.jpg' %}" class="top-0 absolute">
+    <!-- ファーストビューより下-->
+
+    <div class="py-10 mt-24 text-center relative h-auto flex flex-col justify-center items-center">
+        <div class="relative w-auto text-center">
+            <h3 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">お住まいの国の通貨と外国通貨を比較する</h3>
+        </div >
+        <div class="py-10 w-2/3 text-center relative">
+            <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">お住まいの国の通貨を為替レート上で比較し,<br>通貨の安い国の観光地をピックアップするサービスを提供します。</p>
         </div>
-        <p class="right-56 absolute  text-3xl inline-block mb-7" >VND(ドン)</p>
-        <div class="right-52 absolute mt-7 bottom-24">
-            <img src="{% static 'images/vietnam.jpg' %}">
-            <img src="{% static 'images/vietnam_flag.jpg' %}" class="top-0 absolute">
+        <div>
+            <div class = "relative h-auto flex flex-col justify-center items-center">
+                <div class="h-80 relative" >
+                    <img src="{% static 'images/country_to_country.png' %}"class = "relative m-2 h-auto w-auto">
+                </div>
+                <div class ="w-80 h-20 bg-blue-300 rounded-[50px] relative transform -translate-x-1/8 -translate-y-1/2 md:left-auto md:transform-none">
+                    <p class="text-3xl text-center leading-[88px]">為替レート</p>
+                </div>
+            </div>
         </div>
-        <img src="{% static 'images/plain.png' %}" class="absolute bottom-40" style="left:450px;">
-        <canvas id="direction_mark" class="w-52 h-36 absolute" style="left: 700px; bottom: 200px;"></canvas>
-        <div style="width: 326px; height:86px; left:516px; bottom:0; 
-            background-color:#98D1EF; border-radius:50px;"class="absolute">
-            <p class="text-3xl text-center" style="line-height: 88px;">為替レート</p>
+
+        <!--セクション3-->
+
+        <div class="py-10 mt-24 text-center relative h-auto">
+            <h4 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">あんな観光地、こんな観光地</h4>
+        </div>
+
+        <div class="relative">
+            <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">国を選択したら観光地を紹介します。<br>おどろきの観光地が見つかるかもしれません</p>
+        </div>
+
+        <div class="mt-24 flex row relative m-6 container mx-auto">
+            <div class="mx-3 md:mx-6" >
+                <img src="{% static 'images/destination1.jpg' %}" >
+            </div>
+            <div class="mx-3 md:mx-6">
+                <img src="{% static 'images/destination2.jpg' %}"  >
+            </div>
+            <div class="mx-3 md:mx-6">
+                <img src="{% static 'images/destination3.jpg' %}" >
+            </div>
+            
         </div>
     </div>
+
+    <div class="mt-24 text-center relative h-auto">
+        <h5 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">旅行先を目的に沿って選ぶことも</h5>
+    </div>
+    <div class="py-8 relative">
+        <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">食べ物、歴史、自然などの選択ができます。</p>
+    </div>
+    <div class="mt-24  flex row relative m-6 container mx-auto flex justify-center items-center">
+        <div class="mx-3 md:mx-6 relative" >
+            <div>
+                <img src="{% static 'images/food.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-36">
+                <p>食べ物</p>
+            </div>
+        </div>
+        <div class="mx-3 md:mx-6 relative">
+            <div>
+                <img src="{% static 'images/history.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-40">
+                <p>歴史</p>
+            </div>
+        </div>
+        <div class="mx-3 md:mx-6 relative">
+            <div>
+                <img src="{% static 'images/nature.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-40">
+                <p>自然</p>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="relative w-auto text-center md:text-2xl lg:text-3xl 2xl:text-4xl m-14">
+        <h6>お知らせ</h6>
+    </div>
+    <div class="relative w-full mb-14">
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+       
+    </div>
+    
 </div>
 
 
-<div style="width: 100%; height: auto;"class="text-center">
-    <p style="font-size: 38px; margin-top: 100px;" class="">あんな観光地、こんな観光地</p>
-    <div style="margin: 50px;">
-        <p class="text-2xl">国を選択したら観光地を紹介します。</p>
-        <p class="text-2xl">おどろきの観光地が見つかるかもしれません</p>
-    </div>
-    <div class="flex relative">
-        <img src="{% static 'images/destination1.jpg' %}" class="m-6" >
-        <img src="{% static 'images/destination2.jpg' %}" class="m-6" >
-        <img src="{% static 'images/destination3.jpg' %}" class="m-6" >
-    </div>
-    <p style="font-size: 38px; margin-top: 100px;" class="">旅行先を目的に沿って選ぶことも</p>
-    <div style="margin: 50px;">
-        <p class="text-2xl">食べ物、歴史、自然などの選択ができます。</p>
-    </div>
-    <div class="flex relative">
-        <img src="{% static 'images/food.jpg' %}" class="m-6">
-        <p style="font-size: 40px; color:white;" class="absolute top-40 left-40" >食べ物</p>
+<script>
 
-        <img src="{% static 'images/history.jpg' %}" class="m-6">
-        <p style="font-size: 40px; color:white; top:160px; left:640px;" class="absolute">歴史</p>
+    const $ = jQuery;
+    
+    
+    
+    const h1 = $("#firstViewSentense").children().children().eq(0);
+    const h2 = $("#firstViewSentense").children().children().eq(1);
+    const small_h1 = $("#small_first").children().eq(0);
+    const small_h2 = $("#small_first").children().eq(1);
 
-        <img src="{% static 'images/nature.jpg' %}" class="m-6">
-        <p style="font-size: 40px; color:white;" class="absolute top-40 right-48">自然</p>
-    </div>
-</div>
-<script src="{% static '../static/script.js' %}"></script>
+
+    const restyle = () => {
+
+        const windowSize = $(window).width();
+        if(windowSize < 600) {
+            h1.css('visibility', 'hidden');
+            h2.css('visibility', 'hidden'); 
+            small_h1.css('visibility', 'visible');
+            small_h2.css('visibility', 'visible');
+            console.log(small_h1)
+            
+        }else{
+            h1.css('visibility', 'visible');
+            h2.css('visibility', 'visible');
+            small_h1.css('visibility', 'hidden'); 
+            small_h2.css('visibility', 'hidden'); 
+        }
+
+        
+    } 
+
+    restyle();
+
+    // ウィンドウのリサイズ時にrestyleを実行
+    $(window).on('resize', restyle);
+
+
+
+
+</script>
+
+<!--<script src="{% static '../static/script.js' %}"></script>-->
+
+
 
 {% endblock %}

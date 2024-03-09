@@ -1,3 +1,7 @@
+/*
+
+//矢印
+
 
 const dire_Mark = document.getElementById('direction_mark');
 console.log(dire_Mark)
@@ -20,3 +24,12 @@ function draw_d_m() {
 }
 
 draw_d_m();
+
+*/
+
+
+
+
+
+
+  
