@@ -1,0 +1,201 @@
+{% extends 'home.html' %}
+
+{% block content %}
+{% load static %}
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="{% static '../static/jquery-3.7.1.min.js' %}"></script>
+
+<div class="w-screen flex flex-col justify-center items-center">
+
+    <div class="relative w-full flex justify-center items-center bg-[#97d0ee]" >
+
+        <div class="flex flex-col mt-40">
+
+            <div class="container mx-auto  relative" id="small_first">
+
+                <h1 class="text-white text-xl invisible relative left-0 top-0 ml-10">安く、遠くに行きたい</h1>
+                <h2 class="text-white text-lg invisible relative left-0 top-[20px] ml-10">外国為替と比較し、<br>安いところに旅行に行こう</h2>
+
+                <img src="{% static '../static/images/top.jpg' %}" alt="安く、遠くに行きたい">
+                <div class="flex flex-col" id="firstViewSentense">
+                    <div class=" w-auto text-left absolute top-28 ml-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:transform-none mb-7">
+                        <h1 class="text-white text-4xl">安く、遠くに行きたい</h1>
+                    </div>
+                    <div class="w-auto text-left absolute top-64 ml-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:transform-none">
+                        <h2 class="text-white text-3xl">外国為替と比較し、安いところに旅行に行こう</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <!-- ファーストビューより下-->
+
+    <div class="py-10 mt-24 text-center relative h-auto flex flex-col justify-center items-center">
+        <div class="relative w-auto text-center">
+            <h3 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">お住まいの国の通貨と外国通貨を比較する</h3>
+        </div >
+        <div class="py-10 w-2/3 text-center relative">
+            <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">お住まいの国の通貨を為替レート上で比較し,<br>通貨の安い国の観光地をピックアップするサービスを提供します。</p>
+        </div>
+        <div>
+            <div class = "relative h-auto flex flex-col justify-center items-center">
+                <div class="h-80 relative" >
+                    <img src="{% static 'images/country_to_country.png' %}"class = "relative m-2 h-auto w-auto">
+                </div>
+                <div class ="w-80 h-20 bg-blue-300 rounded-[50px] relative transform -translate-x-1/8 -translate-y-1/2 md:left-auto md:transform-none">
+                    <p class="text-3xl text-center leading-[88px]">為替レート</p>
+                </div>
+            </div>
+        </div>
+
+        <!--セクション3-->
+
+        <div class="py-10 mt-24 text-center relative h-auto">
+            <h4 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">あんな観光地、こんな観光地</h4>
+        </div>
+
+        <div class="relative">
+            <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">国を選択したら観光地を紹介します。<br>おどろきの観光地が見つかるかもしれません</p>
+        </div>
+
+        <div class="mt-24 flex row relative m-6 container mx-auto">
+            <div class="mx-3 md:mx-6" >
+                <img src="{% static 'images/destination1.jpg' %}" >
+            </div>
+            <div class="mx-3 md:mx-6">
+                <img src="{% static 'images/destination2.jpg' %}"  >
+            </div>
+            <div class="mx-3 md:mx-6">
+                <img src="{% static 'images/destination3.jpg' %}" >
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="mt-24 text-center relative h-auto">
+        <h5 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">旅行先を目的に沿って選ぶことも</h5>
+    </div>
+    <div class="py-8 relative">
+        <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">食べ物、歴史、自然などの選択ができます。</p>
+    </div>
+    <div class="mt-24  flex row relative m-6 container mx-auto flex justify-center items-center">
+        <div class="mx-3 md:mx-6 relative" >
+            <div>
+                <img src="{% static 'images/food.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-36">
+                <p>食べ物</p>
+            </div>
+        </div>
+        <div class="mx-3 md:mx-6 relative">
+            <div>
+                <img src="{% static 'images/history.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-40">
+                <p>歴史</p>
+            </div>
+        </div>
+        <div class="mx-3 md:mx-6 relative">
+            <div>
+                <img src="{% static 'images/nature.jpg' %}">
+            </div>
+            <div class="text-white text-4xl absolute top-40 left-40">
+                <p>自然</p>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="relative w-auto text-center md:text-2xl lg:text-3xl 2xl:text-4xl m-14">
+        <h6>お知らせ</h6>
+    </div>
+    <div class="relative w-full mb-14">
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+
+        <div class=" flex flex-row relative my-6">
+            <div class="mx-28 relative">
+                <p>xxxx.xx.xx.</p>
+            </div>
+            <div class="relative">
+                <p>****を更新しました</p>
+            </div>
+        </div>
+
+        <hr class="border-black mx-28">
+       
+    </div>
+    
+</div>
+
+
+<script>
+
+    const $ = jQuery;
+    
+    
+    
+    const h1 = $("#firstViewSentense").children().children().eq(0);
+    const h2 = $("#firstViewSentense").children().children().eq(1);
+    const small_h1 = $("#small_first").children().eq(0);
+    const small_h2 = $("#small_first").children().eq(1);
+
+
+    const restyle = () => {
+
+        const windowSize = $(window).width();
+        if(windowSize < 600) {
+            h1.css('visibility', 'hidden');
+            h2.css('visibility', 'hidden'); 
+            small_h1.css('visibility', 'visible');
+            small_h2.css('visibility', 'visible');
+            console.log(small_h1)
+            
+        }else{
+            h1.css('visibility', 'visible');
+            h2.css('visibility', 'visible');
+            small_h1.css('visibility', 'hidden'); 
+            small_h2.css('visibility', 'hidden'); 
+        }
+
+        
+    } 
+
+    restyle();
+
+    // ウィンドウのリサイズ時にrestyleを実行
+    $(window).on('resize', restyle);
+
+
+
+
+</script>
+
+<!--<script src="{% static '../static/script.js' %}"></script>-->
+
+
+
+{% endblock %}

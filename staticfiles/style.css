@@ -72,7 +72,8 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 0;
+    position: absolute;
 }
 /* Add these styles to your existing style.css file or create a new CSS file */
 /* Header section */
@@ -163,3 +164,4 @@ footer {
     display: block;
 }
 /* Add more styles or adjust as needed */
+
