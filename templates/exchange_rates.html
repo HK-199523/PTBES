@@ -1,0 +1,62 @@
+{% extends 'home.html' %}
+
+{% block content %}
+{% load static %}
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="{% static '../static/jquery-3.7.1.min.js' %}"></script>
+
+<div class="w-screen flex flex-col justify-center items-center">
+    <h2>Exchange Rates</h2>
+    <div class="py-10 mt-24 text-center relative h-auto flex flex-col justify-center items-center">
+        <div class="relative w-auto text-center">
+            <h1 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">為替レート情報</h1>
+        </div>
+        <div class="py-10 w-2/3 text-center relative">
+            <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">世界各国の通貨とその為替レートをリアルタイムで提供します。</p>
+        </div>
+    </div>
+
+
+    
+    <!-- 為替レート表示部分 -->
+    <div class="mt-24 flex flex-col items-center relative m-6 container mx-auto">
+        <table class="table-auto border-collapse border border-gray-200">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2 text-gray-600">Currency Pair</th>
+                    <th class="border border-gray-300 px-4 py-2 text-gray-600">Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pair, rate in rates.items %}
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">{{ pair }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{% for key,v in rate.items %}
+                        {{ v }}
+                    {% endfor %}
+                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><!-- ここに為替レートを表示するためのコンテンツを配置 -->
+    </div>
+
+    <!-- その他の情報やリンクなど -->
+    <div class="mt-24 text-center relative h-auto">
+        <h2 class="md:text-2xl lg:text-3xl 2xl:text-4xl relative">その他の情報</h2>
+    </div>
+    <div class="py-8 relative">
+        <p class="md:text-xl lg:text-2xl 2xl:text-2xl relative">為替レートの歴史や、通貨に関する豆知識など。</p>
+    </div>
+
+    <!-- お知らせセクション、top.htmlからの転用 -->
+    <div class="relative w-auto text-center md:text-2xl lg:text-3xl 2xl:text-4xl m-14">
+        <h3>お知らせ</h3>
+    </div>
+    <div class="relative w-full mb-14">
+        <!-- お知らせ内容 -->
+    </div>
+
+</div>
+
+{% endblock %}

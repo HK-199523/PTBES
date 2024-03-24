@@ -24,6 +24,4 @@ urlpatterns = [
     path('exchange/', views.exchange, name='exchange'),
     path('top/', views.top, name='top'),
     # Define other URL patterns...
-
-
 ]
