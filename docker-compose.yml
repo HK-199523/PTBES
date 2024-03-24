@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: ptbse_com
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/usr/src/app
